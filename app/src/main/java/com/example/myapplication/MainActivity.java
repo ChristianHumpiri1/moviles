@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
     private EditText txtnombre;
     private Button btn,btn1,btn2,btn3,btn4,btn5;
+    private TextView tvus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         btn2 = findViewById(R.id.btnmayor);
         btn3 = findViewById(R.id.btnpromedio);
         btn4 = findViewById(R.id.btncal);
+        tvus = findViewById(R.id.tvuser);
+        tvus.setText("Bienvenido: "+getIntent().getStringExtra("pupil"));
         /*btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,5 +56,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent4 = new Intent(this, Calculadora.class);
         startActivity(intent4);
     }
+
 
 }
